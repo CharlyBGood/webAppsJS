@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+:root {
+  --fs-600: 2rem;
+  --fs-500: 1.35rem;
+  --fs-400: 1rem;
+  --col-whr: #e2e1e1;
+  --col-whp: #f7e4f2;
+  --col-rd: #3a063e;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--fs-400);
+  font-family: "Nanum Gothic", sans-serif;
+  color: var(--col-whr);
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  font-weight: bolder;
+}
+
+.header-logo {
+  border-radius: 3em;
+  padding: 0.4em;
+  margin-left: 0.5em;
+}
+
+.topnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--col-rd);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  opacity: 0.9;
+}
+
+.nav-link_2 {
+  padding: 1.5em;
+  text-align: right;
+  color: var(--col-whr);
+  text-decoration: none;
+}
+
+.nav-link_2:hover {
+  background: var(--col-whr);
+  color: var(--col-rd);
+}
+
+.topnav h1 {
+  text-align: center;
+  font-size: var(--fs-400);
+  letter-spacing: 0.6em;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.item {
+  padding: 0.6em;
+  text-align: center;
+  width: 65%;
+}
+
+.item:nth-child(1),
+.item:nth-child(3),
+.item:nth-child(5) {
+  align-self: flex-start;
+}
+
+.item:nth-child(2),
+.item:nth-child(4),
+.item:nth-child(6) {
+  align-self: flex-end;
+}
+
+.item a {
+  font-size: var(--fs-400);
+  text-decoration: none;
+  color: var(--col-whr);
+  line-height: 1.4rem;
+  letter-spacing: 0.6em;
+  text-shadow: 4px 1px var(--col-rd);
+  -webkit-animation: bigpre 11s infinite alternate;
+  -webkit-animation: movingWords 11s infinite alternate;
+  animation: movingWords 11s infinite alternate;
+}
+
+@-webkit-keyframes movingWords {
+  50% {
+    font-size: 11em 2em;
+    color: var(--col-rd);
+    text-shadow: -4px -1px var(--col-whr);
+  }
+}
+
+@keyframes movingWords {
+  50% {
+    font-size: 11em 2em;
+    color: var(--col-rd);
+    text-shadow: -4px -1px var(--col-whr);
+  }
+}
+
+footer {
+  background-color: var(--col-rd);
+  opacity: 0.9;
+  padding: 0.6em;
+  margin: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-500);
+}
+
+.footer a {
+  padding: 0.5em;
+  text-decoration: none;
+  color: var(--col-whp);
+}
+
+@media screen and (max-width: 800px) {
+
+  .nav-link_1 {
+    flex: 1;
+    margin-left: .7em;
+  }
+
+  .topnav h1 {    
+    text-align: center;
+    width: 45%;
+    font-size: .9em;
+  }
+ 
+  .main-container {
+    width: 80%;
+    height: auto;
+    gap: 2em;
+  }
+
+  .item {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .item a {
+    font-size: 1em;
+  }
+
+  .footer {
+    font-size: 1.1em;
+  }
+}
