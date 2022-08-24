@@ -142,7 +142,7 @@ body {
 footer {
   background-color: var(--col-rd);
   opacity: 0.9;
-  padding: 0.6em;
+  padding: 0.3em;
   margin: 0;
   bottom: 0;
   position: fixed;
@@ -159,7 +159,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
 }
 
 .footer a {
