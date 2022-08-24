@@ -84,6 +84,13 @@ body {
   width: 65%;
 }
 
+.item a:hover {
+  letter-spacing: .8em;
+  transition: 1.1s;
+  color: var(--col-rd);
+  text-shadow: 4px 1px var(--col-whr);
+}
+
 .item:nth-child(1),
 .item:nth-child(3),
 .item:nth-child(5) {
