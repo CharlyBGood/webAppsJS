@@ -1,131 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
 html {
-    font-family: 'MuseoModerno', cursive;
-    font-size: 10px;
-    background-color: #2d3740;
+  font-family: "MuseoModerno", cursive;
+  font-size: 10px;
+  background-color: #0a2e1c;
+  color: rgb(230, 225, 225);
+  width: 100%;
+  height: auto;
 }
 
-body {
-    padding: 1rem;
-    background: #1c262f;
-    color: rgb(230, 225, 225);
-    width: 90%;
-    margin: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0d3a1c;
+  padding: 1rem;
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
 }
 
-.logo {
-    text-align:  center;
- }
+.logo {  
+  margin: 0 auto;
+  text-align: center;  
+}
 
- form {
-     text-align: center;
- }
+.logo svg {
+  font-size: 11vw;
+  margin: 0 auto;  
+}
 
- label {
-     font-size: 1.0rem;
- }
+.form {
+  text-align: center;
+}
 
- input[type="number"] {
-    font-family: inherit;
-    background: rgb(230, 225, 225);
-    width: 80%;
-    margin: 1rem 0;
-    padding: 0.8rem 0;
-    border: none;
-    font-size: 1 2rem;
-    text-align: center;
- }
+label {
+  font-size: 1.2em;
+}
 
- button {
-     font-family: inherit;
-     font-size: 1.4rem;
-     font-weight: bolder;
-     width: 80px;
-     height: 80px;
-     border: none;
-     border-radius: 50%;
-     background: #0ad9ff;
-     margin: 0.5rem 0 1rem 0;
- }
+input[type="number"] {
+  font-family: inherit;
+  background: rgb(230, 225, 225);
+  width: 25%;
+  margin: 1em auto;
+  padding: .5em;
+  border: none;
+  border-radius: .5em;
+  font-size: 1rem;
+  text-align: center;
+}
 
- ul {
-     padding: 0;
-     display: flex;
-     list-style: none;
-     justify-content: space-between;
- }
+.btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.3em;
+  font-weight: bolder;
+  width: 3.1em;
+  height: 3.1em;
+  border: none;
+  border-radius: 50%;
+  background: #d1820c;
+  margin: 0.5rem 0 1rem 0;
+}
 
- li {
-     border: 1px solid;
-     padding: 1rem 1.5rem;
+.container-section {
+  width: 85%;
+  max-height: 100%;
+  padding: 1em;
+  margin: 0 auto;
+}
 
- }
+section {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0.5em;
+}
 
- .entriesWrapper {
-     padding: 1rem 0;
-     font-size: 1.6rem;
- }
+ul {
+  width: 75%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  margin: 0 auto;
+}
 
- .entriesWrapper h3 {
-     margin: 0;
-     text-align: center;
-     font-weight: lighter;
- }
+li {
+  border: 1px solid;
+  padding: 1rem 1.5rem;
+  margin: .2em;
+}
 
- .data {
-     font-size: 1.4rem;
- }
+.entriesWrapper {
+  width: 95%;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+}
 
- .data div {
-     background: #141c22;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     margin: 0.5rem 0;
-     padding: 0 1rem;
- }
+.entriesWrapper h3 {
+  margin: 0.5em;
+  text-align: center;
+  font-weight: lighter;
+}
 
- .progress {
-     text-align: center;
-     padding-bottom: 1rem;
- }
+.data {
+  display: flex;
+  gap: 0.5em;
+  font-size: 1rem;
+  justify-content: center;
+}
 
- .progress h3 {
-     font-size: 1.6rem;
-     font-weight: lighter;
- }
+.data div {
+  width: 55%;
+  background: #21412e9f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5em auto;
+  padding: 1rem;
+}
 
- .progressCircleWrapper {
-     display: flex;
-     justify-content: center;
- }
+.progress {
+  text-align: center;
+  padding: 1rem;
+}
 
- #progressCircle {
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     /* background: conic-gradient(#70db70, 50%, #2d3740 50%); */
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
+.progress h3 {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
 
- #progressCenter {
-     width: 220px;
-     height: 220px;
-     border-radius: 50%;
-     background: #1c262f;
- }
+.progressCircleWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1em auto;
+}
 
- @media screen and (min-width: 800px) {
-     body {
-         width: 60%;
-     }
+#progressCircle {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  /* background: conic-gradient(#70db70, 50%, #2d3740 50%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-     input[type="number"] {
-        width: 40%;
-     }
+#progressCenter {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #0d3a1c;
+}
 
-     svg {
-         max-width: 50%;
-     }
- }
+@media screen and (min-width: 800px) {
+
+  svg {
+    max-width: 50%;
+  }
+}
