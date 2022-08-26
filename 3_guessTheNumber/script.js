@@ -15,15 +15,15 @@ function updateRange() {
 
     const lowValue = document.getElementById('low');
     lowValue.style.flex = low + '%';
-    lowValue.style.background = "#ef7b54";    
+    lowValue.style.background = "#a53b3b";    
 
     const space = document.getElementById('space');
     space.style.flex = high - low + '%';
-    space.style.background = "#b6447d";
+    space.style.background = "#91a891";
 
     const highValue = document.getElementById('high');
     highValue.style.flex = 100 - high + '%';
-    highValue.style.background = "#ef7b54";
+    highValue.style.background = "#a53b3b";
 }
 
 function gameEnded() {
@@ -44,7 +44,7 @@ function init() {
 
 function startGameView() {
     document.getElementById('welcomeScreen').style.display = "none";
-    document.getElementById('gameArea').style.display = "block";
+    document.getElementById('gameArea').style.display = "flex";
 }
 
 function  easyMode() {

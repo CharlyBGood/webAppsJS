@@ -43,18 +43,20 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  width: 80%;
+  width: 100%;
   letter-spacing: .3em;  
 }
 
 .welcome h2 {
   font-size: 2.2rem;
-  margin: 15% auto 1em;
+  margin: 1em auto;
 }
 
 .welcome p {
-  font-size: 1.8rem;
+  /* display: inline;     */
+  font-size: 1.5rem;
+  margin: .5em;
+  
 }
 
 .button-wrapper {
@@ -68,6 +70,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 95%;
   margin: 0 auto;  
 }
@@ -116,19 +119,26 @@ input {
   border: 1px solid var(--red);
   border-radius: .5em;
   background: transparent;
-  margin: 2rem 0;
-  padding: 1rem 0;
+  margin: 2rem 0 .5rem;
+  padding: .6rem 0;
   width: 16rem;
   text-align: center;
   color: var(--whitey);
 }
 
+.guess-btn {  
+  width: 16rem;
+  padding: .5em;  
+}
+
 #range {
   display: flex;
   background: var(--green);
-  height: 50px;
-  padding: 0;
-  margin: 0 0 4rem 0;
+  width: 80%;
+  height: 5em;
+  border-radius: .5em;
+  padding: 1em;
+  margin: 2em auto;
 }
 
 #rangeOutput {
@@ -136,19 +146,23 @@ input {
 }
 
 .stats {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 85%;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 .info span {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 #newGameButton {
