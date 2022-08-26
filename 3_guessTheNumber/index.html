@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body onload="init()">
-    <main>
-        <div id="welcomeScreen">
+    <main class="main-container">
+        <div class="welcome" id="welcomeScreen">
             <h2>Guess the random number  <br>between 1-100</h2>
-            <section>
+            <section class="select-container">
                 <p>Select difficulty setting:</p>
                 <div class="button-wrapper">
                     <button onclick="easyMode()">Easy: 10 attempts</button>
                     <button onclick="hardMode()">Hard: 5 attempts</button>
                 </div>
             </section>
+            <div class="img-container">
+                <img src="./img/rolldice.gif" alt="rolling dices">
+            </div>
         </div>
-        <div id="gameArea">
+        <div class="welcome" id="gameArea">
             <button id="newGameButton" onclick="newGame()">NEW GAME</button>
             <section>
                 <h3 id="textOutput">Your Guess</h3>

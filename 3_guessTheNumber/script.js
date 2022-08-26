@@ -19,7 +19,7 @@ function updateRange() {
 
     const space = document.getElementById('space');
     space.style.flex = high - low + '%';
-    space.style.background = "#83e1d0";
+    space.style.background = "#b6447d";
 
     const highValue = document.getElementById('high');
     highValue.style.flex = 100 - high + '%';
