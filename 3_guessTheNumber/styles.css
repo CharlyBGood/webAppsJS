@@ -8,6 +8,7 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -17,6 +18,7 @@ body,
 html {
   font-size: 10px;
   font-weight: 300;
+  background: -o-radial-gradient(var(--gradient-1), var(--gradient-2));
   background: radial-gradient(var(--gradient-1), var(--gradient-2));
   color: var(--whitey);
   width: 100%;
@@ -24,9 +26,18 @@ html {
 }
 
 .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
   background: var(--Bkgr);
@@ -40,11 +51,17 @@ html {
 }
 
 .welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   width: 100%;
-  letter-spacing: .3em;  
+  letter-spacing: 0.3em;
 }
 
 .welcome h2 {
@@ -55,24 +72,37 @@ html {
 .welcome p {
   /* display: inline;     */
   font-size: 1.5rem;
-  margin: .5em;
-  
+  margin: 0.5em;
 }
 
 .button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 75%;
   margin: 1em auto;
 }
 
 .select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 95%;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 .img-container {
@@ -82,8 +112,7 @@ html {
 
 .img-container img {
   width: 70%;
-  border-radius: .1em;
-  
+  border-radius: 0.1em;
 }
 
 button {
@@ -91,16 +120,16 @@ button {
   cursor: pointer;
   background: var(--whitey);
   padding: 1em;
-  border-radius: .5em;
+  border-radius: 0.5em;
   width: 75%;
-  margin: .3em auto;
+  margin: 0.3em auto;
   outline: none;
   font-weight: bold;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 button:last-child {
-  background: var(--red);  
+  background: var(--red);
 }
 
 button:first-child:active {
@@ -117,26 +146,28 @@ h3 {
 
 input {
   border: 1px solid var(--red);
-  border-radius: .5em;
+  border-radius: 0.5em;
   background: transparent;
-  margin: 2rem 0 .5rem;
-  padding: .6rem 0;
+  margin: 2rem 0 0.5rem;
+  padding: 0.6rem 0;
   width: 16rem;
   text-align: center;
   color: var(--whitey);
 }
 
-.guess-btn {  
+.guess-btn {
   width: 16rem;
-  padding: .5em;  
+  padding: 0.5em;
 }
 
 #range {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: var(--green);
   width: 80%;
   height: 5em;
-  border-radius: .5em;
+  border-radius: 0.5em;
   padding: 1em;
   margin: 2em auto;
 }
@@ -146,16 +177,29 @@ input {
 }
 
 .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 0 auto;
   width: 100%;
 }
 
 .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 85%;
   margin: 1em auto;
@@ -170,7 +214,20 @@ input {
 }
 
 .flash {
+  -webkit-animation: flash 1s infinite;
   animation: flash 1s infinite;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes flash {

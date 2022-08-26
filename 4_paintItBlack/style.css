@@ -276,8 +276,10 @@ button.refresh:active {
 
 .description-buttons p {
   margin: 0;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 input[type="range"] {

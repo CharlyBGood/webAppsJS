@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,8 +16,15 @@ html {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background: #0d3a1c;
   padding: 1rem;
@@ -25,14 +33,14 @@ html {
   margin: 0 auto;
 }
 
-.logo {  
+.logo {
   margin: 0 auto;
-  text-align: center;  
+  text-align: center;
 }
 
 .logo svg {
   font-size: 11vw;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 .form {
@@ -48,9 +56,9 @@ input[type="number"] {
   background: rgb(230, 225, 225);
   width: 25%;
   margin: 1em auto;
-  padding: .5em;
+  padding: 0.5em;
   border: none;
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-size: 1rem;
   text-align: center;
 }
@@ -84,9 +92,14 @@ section {
 ul {
   width: 75%;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   list-style: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 0 auto;
 }
@@ -94,7 +107,7 @@ ul {
 li {
   border: 1px solid;
   padding: 1rem 1.5rem;
-  margin: .2em;
+  margin: 0.2em;
 }
 
 .entriesWrapper {
@@ -110,17 +123,27 @@ li {
 }
 
 .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 0.5em;
   font-size: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .data div {
   width: 55%;
   background: #21412e9f;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0.5em auto;
   padding: 1rem;
@@ -137,7 +160,11 @@ li {
 }
 
 .progressCircleWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 1em auto;
 }
@@ -147,8 +174,14 @@ li {
   height: 11rem;
   border-radius: 50%;
   /* background: conic-gradient(#70db70, 50%, #2d3740 50%); */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -160,7 +193,6 @@ li {
 }
 
 @media screen and (min-width: 800px) {
-
   svg {
     max-width: 50%;
   }
