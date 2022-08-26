@@ -213,7 +213,7 @@ a {
   color: var(--redWords);
 }
 
-.description-title:hover {
+div.description-title:hover {
   font-size: 1em;
   text-shadow: 2px 2px 2px var(--gray);
   cursor: pointer;
@@ -272,6 +272,12 @@ button.refresh:active {
   justify-content: center;
   width: 80%;
   margin: 0 auto;
+}
+
+.description-buttons p {
+  margin: 0;
+  align-self: center;
+  font-size: .8rem;
 }
 
 input[type="range"] {
