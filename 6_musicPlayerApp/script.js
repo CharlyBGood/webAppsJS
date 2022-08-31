@@ -43,13 +43,11 @@ for (const link of links) {
 // when called the selected file will be played
 function setSong(e) {
   let titleS = e.target.innerText;
-  playerImg.classList.remove("pulse");
   source.src = "songs/" + titleS;  
   e.target.style.background = "#3a063e"
   currentSong.innerText = titleS;
   player.load();
   player.play();
-  playerImg.classList.add("pulse");  
 }
 
 // add click event on play button

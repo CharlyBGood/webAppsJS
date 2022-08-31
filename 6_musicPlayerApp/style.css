@@ -25,6 +25,11 @@ body, html {
   padding: 0;  
 }
 
+.topnav h2 {
+  font-size: var(--fs-500);
+  margin-right: 3em;
+}
+
 .player {
   display: flex;
   flex-direction: column;
@@ -80,6 +85,11 @@ body, html {
   outline: none;
 }
 
+.controls_wrapper button:active {
+  box-shadow: 2px 2px 2px #212121;
+  padding-right: .7em;
+}
+
 .radio {
   display:  flex;
   flex-direction: column;
@@ -91,6 +101,41 @@ progress {
   width: 75%;
   height: 3rem;  
 }
+
+/* volume slider styles */
+.volume span {
+  font-size: 1.5em;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+    width: 65%;
+    border: 1px solid var(--col-rd);
+    border-radius: .2em;
+    -webkit-appearance: none;
+    background-color: var(--col-whr);
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: .6em;
+    -webkit-appearance: none;
+    color: var(--col-rd);    
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 1em;
+    -webkit-appearance: none;
+    height: 2em;
+    border-radius: .3em;
+    cursor: pointer;
+    background: #0c0c0c;
+    box-shadow: -8em 0 0 8em var(--col-rd);
+  }
+}
+
+/* volume slider styles */
 
 #currentSong {
   text-align: center;  
@@ -146,49 +191,13 @@ footer p {
   margin: 0;
   font-size: 1.1rem;
   font-weight: bold;
+  padding: 1em;
 }
 
 footer a {
   text-decoration: none;
   color: var(--col-whp);
   font-size: var(--fs-500);
-}
-
-.pulse {
-  -webkit-animation: pulse;
-  animation: pulse;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-}
-
-@-webkit-keyframes pulse {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-  to {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-  to {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
 }
 
 @media (max-width: 800px) {
