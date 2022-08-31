@@ -73,8 +73,11 @@ slider.oninput = function (e) {
 };
 
 // update state on progress bar when file is playing
+
+
 function updateProgress() {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
+  progressBar.addEventListener("click", (e) =>  player.currentTime += progressBar.value / player.duration)
 }

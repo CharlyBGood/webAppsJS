@@ -125,6 +125,7 @@ html {
 progress {
   width: 75%;
   height: 3rem;
+  cursor: pointer;
 }
 
 /* volume slider styles */
