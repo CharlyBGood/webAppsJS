@@ -2,8 +2,9 @@
 const songs = [
   "tanHop.mp3",
   "Semiotico.mp3",
-  "Popa_America.mp3",  
-  "Working_class.mp3"  
+  "Popa America.mp3",
+  "Working Class.mp3",
+  "Nos Vamos.mp3",
 ];
 
 // select player buttons and elements
@@ -35,15 +36,15 @@ songList.appendChild(createSongList());
 
 const links = document.querySelectorAll("a");
 for (const link of links) {
-  link.addEventListener("click", setSong);  
+  link.addEventListener("click", setSong);
 }
 
 // when called the selected file will be played
 function setSong(e) {
   let titleS = e.target.innerText;
-  source.src = "songs/" + titleS;  
-  e.target.style.background = "#3a063e"
-  currentSong.innerText = titleS;
+  source.src = "songs/" + titleS;
+  e.target.style.background = "#3a063e";
+  currentSong.innerText = `#${titleS}`;
   player.load();
   player.play();
 }
@@ -67,7 +68,7 @@ stopBtn.addEventListener("click", () => {
 // add volume slider input functionality
 const slider = document.getElementById("volumeSlider");
 slider.oninput = function (e) {
-  const volume = e.target.value;  
+  const volume = e.target.value;
   player.volume = volume;
 };
 
