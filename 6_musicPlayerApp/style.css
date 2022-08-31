@@ -14,10 +14,10 @@
 }
 
 body, html {
+  font-family: "Nanum Gothic", sans-serif;
   background: #0c0c0c;
   width: 100%;
-  height: auto;
-  font-family: "Permanent Marker", cursive;
+  height: auto;  
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--col-whr);
@@ -144,7 +144,8 @@ footer {
 footer p {
   text-align: center;
   margin: 0;
-  font-size: var(--fs-400);  
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 footer a {
