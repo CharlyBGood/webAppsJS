@@ -1,11 +1,9 @@
 // create songs list array
 const songs = [
-  "charlybgood-music-1.mp3",
-  "charlybgood-music-2.mp3",
-  "charlybgood-music-3.mp3",
-  "charlybgood-music-4.mp3",
-  "charlybgood-music-5.mp3",
-  "charlybgood-music-6.mp3",
+  "tanHop.mp3",
+  "Semiotico.mp3",
+  "Popa_America.mp3",  
+  "Working_class.mp3"  
 ];
 
 // select player buttons and elements
