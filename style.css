@@ -147,7 +147,7 @@ body {
 
 @-webkit-keyframes movingWords {
   50% {
-    font-size: 11em 2em;
+    font-size: 1.1em;
     color: var(--col-rd);
     text-shadow: -4px -1px var(--col-whr);
   }
@@ -155,7 +155,7 @@ body {
 
 @keyframes movingWords {
   50% {
-    font-size: 11em 2em;
+    font-size: 1.1em;
     color: var(--col-rd);
     text-shadow: -4px -1px var(--col-whr);
   }

@@ -31,10 +31,19 @@
           </audio>
           <div id="controls">            
             <div class="controls_wrapper">
-              <p id="currentSong"></p>
-              <button id="play">&#9658;</button>
-              <button id="pause">&#10074;&#10074;</button>
-              <button id="stop">&#10066;</button>
+              <p id="currentSong"></p>              
+              <button id="play">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <!-- <span id="play">&#9658;</span> -->
+              <button id="pause">
+                <i class="fa-solid fa-pause"></i>
+              </button>                           
+              <!-- <span id="pause">&#10074;&#10074;</span> -->
+              <button id="stop">
+                <i class="fa-solid fa-stop"></i>
+              </button>              
+              <!-- <span id="stop">&#10066;</span> -->
               <div>
                 <progress id="progress" value="0" max="100"></progress>
               </div>
@@ -64,5 +73,9 @@
       </p>
     </footer>
     <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a9d601c6bd.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -89,12 +89,12 @@ html {
 
 .controls_wrapper button {
   /* font-size: var(--fs-500);   */
-  width: 2.4em;
+  width: 2em;
   height: 2em;
   cursor: pointer;
   color: var(--col-whp);
-  /* padding: .4em; */
-  margin: 0.5em 0;
+  padding: .4em;
+  margin: 0.3em;
   border-radius: 0.5em;
   background-color: #212121;
   -webkit-box-shadow: 1px 1px 1px #212121;
