@@ -14,6 +14,9 @@ let pauseBtn = document.getElementById("pause");
 let stopBtn = document.getElementById("stop");
 const progressBar = document.getElementById("progress");
 
+let volDown = document.getElementById("volDown");
+let volUp = document.getElementById("volUp");
+
 // select audio input
 const player = document.getElementById("player");
 const source = document.getElementById("source");
@@ -73,14 +76,25 @@ stopBtn.addEventListener("click", () => {
 
 // add volume slider input functionality
 const slider = document.getElementById("volumeSlider");
-slider.oninput = function (e) {
+slider.oninput = function(e) {
   const volume = e.target.value;
-  player.volume = volume;
-  console.log(volume);
+  player.volume = volume;      
 };
 
-// update state on progress bar when file is playing
+volDown.addEventListener("pointerdown", () => {
+  console.log("down");    
+  slider.value -= 0.01;
+  console.log(slider.value)
+})
 
+volUp.addEventListener("pointerdown", () => {    
+    console.log("up")
+    slider.value += 0.01;
+  console.log(slider.value)
+  })
+  
+
+// update state on progress bar when file is playing
 function updateProgress() {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
@@ -90,3 +104,5 @@ function updateProgress() {
     (e) => (player.currentTime += progressBar.value / player.duration)
   );
 }
+
+

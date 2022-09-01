@@ -23,6 +23,8 @@ html {
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--col-whr);
+  -webkit-user-select: none; 
+    user-select: none;
   margin: 0;
   padding: 0;
 }
@@ -129,8 +131,25 @@ progress {
 }
 
 /* volume slider styles */
+.volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+}
+
 .volume span {
-  font-size: 1.5em;
+  font-size: 1.4em;
+  background-color: #212121;
+  padding: 0 .2em;
+  border-radius: .3em;
+  cursor: pointer;      
+}
+
+.volume span:active {
+  -webkit-box-shadow: 2px 2px 2px #212121;
+  box-shadow: 2px 2px 2px #212121;
+  padding-right: 0.3em;
 }
 
 /*Chrome*/
@@ -138,6 +157,7 @@ progress {
   input[type="range"] {
     overflow: hidden;
     width: 65%;
+    height: 1em;
     border: 1px solid var(--col-rd);
     border-radius: 0.2em;
     -webkit-appearance: none;
