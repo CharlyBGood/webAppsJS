@@ -49,11 +49,17 @@ function setSong(e) {
   player.play();
 }
 
+function setSong2() {  
+  let titleS = "tanHop";
+  source.src = "songs/tanHop.mp3";
+  currentSong.innerText = `#${titleS}`;
+  player.load();
+  player.play();
+}
+
 // add click event on play button
 playBtn.addEventListener("click", () => {
-  player.readyState
-    ? player.play()
-    : console.log("your motherfkn function works!");
+  player.readyState ? player.play() : setSong2();
 });
 
 // add click event on pause button
@@ -70,14 +76,17 @@ const slider = document.getElementById("volumeSlider");
 slider.oninput = function (e) {
   const volume = e.target.value;
   player.volume = volume;
+  console.log(volume);
 };
 
 // update state on progress bar when file is playing
-
 
 function updateProgress() {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
-  progressBar.addEventListener("click", (e) =>  player.currentTime += progressBar.value / player.duration)
+  progressBar.addEventListener(
+    "click",
+    (e) => (player.currentTime += progressBar.value / player.duration)
+  );
 }
