@@ -12,6 +12,8 @@ let playerImg = document.querySelector(".radio");
 let playBtn = document.getElementById("play");
 let pauseBtn = document.getElementById("pause");
 let stopBtn = document.getElementById("stop");
+let backBtn = document.getElementById("backward");
+
 const progressBar = document.getElementById("progress");
 
 let volDown = document.getElementById("volDown");
@@ -21,6 +23,10 @@ let volUp = document.getElementById("volUp");
 const player = document.getElementById("player");
 const source = document.getElementById("source");
 
+// create title variable
+let titleS;
+
+
 // select element to show current file name and create list of available songs
 const currentSong = document.querySelector("#currentSong");
 
@@ -29,7 +35,7 @@ function createSongList() {
   for (let i = 0; i < songs.length; i++) {
     const item = document.createElement("a");
     item.appendChild(document.createTextNode(songs[i]));
-    list.appendChild(item);
+    list.appendChild(item);        
   }
   return list;
 }
@@ -44,7 +50,7 @@ for (const link of links) {
 
 // when called the selected file will be played
 function setSong(e) {
-  let titleS = e.target.innerText;
+  titleS = e.target.innerText;
   source.src = "songs/" + titleS;
   e.target.style.background = "#3a063e";
   currentSong.innerText = `#${titleS}`;
@@ -52,12 +58,20 @@ function setSong(e) {
   player.play();
 }
 
-function setSong2() {  
-  let titleS = "tanHop";
-  source.src = "songs/tanHop.mp3";
-  currentSong.innerText = `#${titleS}`;
+function setSong2() {
+  titleS = songs[0];  
+  source.src = "songs/" + songs[0];
+  currentSong.innerText = `#${titleS.slice(0, -4)}`;
   player.load();
   player.play();
+}
+
+
+backBtn.addEventListener("click", prevSong);
+function prevSong() {
+  console.log("back")  
+  player.load()
+  player.play()
 }
 
 // add click event on play button
@@ -76,33 +90,31 @@ stopBtn.addEventListener("click", () => {
 
 // add volume slider input functionality
 const slider = document.getElementById("volumeSlider");
-slider.oninput = function(e) {
+slider.oninput = function (e) {
   const volume = e.target.value;
-  player.volume = volume;      
+  player.volume = volume;
 };
 
 volDown.addEventListener("pointerdown", () => {
-  console.log("down");    
+  console.log("down");
   slider.value -= 0.01;
-  console.log(slider.value)
-})
+  console.log(slider.value);
+});
 
-volUp.addEventListener("pointerdown", () => {    
-    console.log("up")
-    slider.value += 0.01;
-  console.log(slider.value)
-  })
-  
+volUp.addEventListener("pointerdown", () => {
+  console.log("up");
+  slider.value += 0.01;
+  console.log(slider.value);
+});
 
 // update state on progress bar when file is playing
 function updateProgress() {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
-  progressBar.addEventListener(
-    "click",
-    (e) => (player.currentTime += progressBar.value / player.duration)
-  );
+
+  progressBar.addEventListener("click", (e) => {
+    player.currentTime += progressBar.value / player.currentTime;
+    console.log(progressBar.value);
+  });
 }
-
-

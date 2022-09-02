@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Music Player</title>
   </head>
   <body>
@@ -31,7 +31,10 @@
           </audio>
           <div id="controls">            
             <div class="controls_wrapper">
-              <p id="currentSong"></p>              
+              <p id="currentSong"></p>
+              <button id="backward">
+                <i class="fa-solid fa-backward"></i>
+              </button>
               <button id="play">
                 <i class="fa-solid fa-play"></i>
               </button>
@@ -43,7 +46,10 @@
               <button id="stop">
                 <i class="fa-solid fa-stop"></i>
               </button>              
-              <!-- <span id="stop">&#10066;</span> -->
+              <!-- <span id="stop">&#10066;</span> -->              
+              <button id="forward">
+                <i class="fa-solid fa-forward"></i>
+              </button>
               <div>
                 <progress id="progress" value="0" max="100"></progress>
               </div>
