@@ -10,7 +10,7 @@ const songs = [
 // select player buttons and elements
 let playerImg = document.querySelector(".radio");
 let playBtn = document.getElementById("play");
-let pauseBtn = document.getElementById("pause");
+// let pauseBtn = document.querySelector("i.fa-solid, fa-pause");
 let stopBtn = document.getElementById("stop");
 let backBtn = document.getElementById("backward");
 
@@ -77,10 +77,14 @@ function prevSong() {
 // add click event on play button
 playBtn.addEventListener("click", () => {
   player.readyState ? player.play() : setSong2();
+  playBtn.querySelector("i.fa-solid").classList.remove("fa-play");
+  playBtn.querySelector("i.fa-solid").classList.add("fa-pause");
 });
 
 // add click event on pause button
-pauseBtn.addEventListener("click", () => player.pause());
+pauseBtn.addEventListener("click", () => {
+  player.pause()  
+});
 
 // add click event on stop button
 stopBtn.addEventListener("click", () => {

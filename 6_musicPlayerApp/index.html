@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>PlayMyMusic</title>
   </head>
   <body>
     <nav class="topnav" id="nav-bar">
       <a class="nav-link_1" href="../index.html">
         <img class="header-logo" src="../img/headerlogo.png" alt="" />
       </a>
-      <h2>Music Player</h2>      
+      <h2>Play My Music</h2>
     </nav>
     <div class="player">
       <div class="player_one">
@@ -29,7 +36,7 @@
             <source id="source" />
             Audio not supported
           </audio>
-          <div id="controls">            
+          <div id="controls">
             <div class="controls_wrapper">
               <p id="currentSong"></p>
               <button id="backward">
@@ -39,14 +46,14 @@
                 <i class="fa-solid fa-play"></i>
               </button>
               <!-- <span id="play">&#9658;</span> -->
-              <button id="pause">
+              <!-- <button id="pause">
                 <i class="fa-solid fa-pause"></i>
-              </button>                           
+              </button> -->
               <!-- <span id="pause">&#10074;&#10074;</span> -->
               <button id="stop">
                 <i class="fa-solid fa-stop"></i>
-              </button>              
-              <!-- <span id="stop">&#10066;</span> -->              
+              </button>
+              <!-- <span id="stop">&#10066;</span> -->
               <button id="forward">
                 <i class="fa-solid fa-forward"></i>
               </button>
@@ -54,7 +61,7 @@
                 <progress id="progress" value="0" max="100"></progress>
               </div>
               <p>Volume</p>
-              <div class="volume">                
+              <div class="volume">
                 <span id="volDown">-</span>
                 <input
                   type="range"
@@ -65,8 +72,7 @@
                 />
                 <span id="volUp">+</span>
               </div>
-            </div>            
-            
+            </div>
           </div>
         </div>
         <div id="songList"></div>
@@ -79,9 +85,9 @@
       </p>
     </footer>
     <script src="script.js"></script>
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/a9d601c6bd.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>

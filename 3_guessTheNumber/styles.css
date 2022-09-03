@@ -50,6 +50,11 @@ html {
   margin: 5% auto;
 }
 
+.topnav h2 {
+  font-size: var(--fs-500);
+  margin-right: 3em;
+}
+
 .welcome {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,6 +208,14 @@ input {
   align-items: center;
   width: 85%;
   margin: 1em auto;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1em;
 }
 
 .info span {
