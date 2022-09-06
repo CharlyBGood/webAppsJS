@@ -82,11 +82,12 @@ html {
 
 .controls_wrapper {
   margin: 0.5em;
-  border: 1px solid #212121;
+  /* border: 1px solid #212121; */
   -webkit-box-shadow: 1px 3px 1px #212121;
   box-shadow: 1px 3px 1px #212121;
   border-radius: 0.5em;
   padding: 0.6em;
+  height: 27vh;
 }
 
 .controls_wrapper button {
@@ -99,9 +100,10 @@ html {
   margin: 0.3em;
   border-radius: 0.5em;
   background-color: #212121;
-  -webkit-box-shadow: 1px 1px 1px #212121;
-  box-shadow: 1px 1px 1px #212121;
+  -webkit-box-shadow: 1px 1px 1px #653e78;
+  box-shadow: 1px 1px 1px #99939c;
   outline: none;
+  border: none;
 }
 
 .controls_wrapper button:active {
