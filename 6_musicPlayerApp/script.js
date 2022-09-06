@@ -153,7 +153,7 @@ player.addEventListener("ended", () => {
   })
 });
 
-player.addEventListener("timeupdate", () => {
+player.addEventListener("timeupdate", () => {  
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
@@ -162,6 +162,10 @@ player.addEventListener("timeupdate", () => {
       progressBar.value / player.currentTime;
   });
 });
+
+progressBar.oninput = () => {
+  console.log("yes")
+}
 
 let durStart = document.querySelector(".durationStart");
 let durEnd = document.querySelector(".durationEnd");

@@ -295,6 +295,7 @@ footer a {
 
 @media (max-width: 800px) {
   .player {
+    width: 100%;
     height: auto;
   }
   .player_one {
@@ -304,5 +305,9 @@ footer a {
     flex-direction: column;
     width: 100%;
     margin: 21% auto;
+  }
+
+  #controls {
+    width: 100%;
   }
 }
