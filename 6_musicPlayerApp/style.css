@@ -246,7 +246,7 @@ footer {
   width: 100%;
   background-color: var(--col-rd);
   padding: 1em;
-  opacity: 0.7;
+  opacity: 0.95;
 }
 
 footer p {

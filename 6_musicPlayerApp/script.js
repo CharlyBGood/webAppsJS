@@ -7,17 +7,23 @@ const songs = [
   "Nos Vamos.mp3",
 ];
 
+let songIndex = 3;
+
 // select player buttons and elements
 let playerImg = document.querySelector(".radio");
 let playBtn = document.getElementById("play");
 let playSVG = playBtn.querySelector("i.fa-solid");
 let stopBtn = document.getElementById("stop");
-let backBtn = document.getElementById("backward");
+let backBtn = document.getElementById("back");
+let nextBtn = document.getElementById("next");
 
 const progressBar = document.getElementById("progress");
 
 let volDown = document.getElementById("volDown");
 let volUp = document.getElementById("volUp");
+
+// select section to show current audio 
+const currentSong = document.querySelector("#currentSong");
 
 // select audio input
 const player = document.getElementById("player");
@@ -26,9 +32,7 @@ const source = document.getElementById("source");
 // create title variable
 let titleS;
 
-// select element to show current file name and create list of available songs
-const currentSong = document.querySelector("#currentSong");
-
+// create list of available songs
 function createSongList() {
   const list = document.createElement("div");
   for (let i = 0; i < songs.length; i++) {
@@ -45,12 +49,13 @@ songList.appendChild(createSongList());
 const links = songList.querySelectorAll("a");
 for (const link of links) {
   link.addEventListener("click", setSong);
+  link.classList.add("song");
 }
 
 // when called the selected file will be played
 function setSong(e) {
   titleS = e.target.innerText;
-  source.src = "songs/" + titleS + ".mp3";
+  source.src = `songs/${titleS}.mp3`;
   e.target.style.background = "#3a063e";
   currentSong.innerText = `Playing: ${titleS}`;
   player.load();
@@ -68,10 +73,12 @@ function setSong2() {
 }
 
 backBtn.addEventListener("click", () => {
-  console.log("back");
-  player.load();
-  player.play();
+  console.log("back");  
 });
+
+nextBtn.addEventListener("click", () => {
+  console.log("next")
+})
 
 // add click event on play button
 playBtn.addEventListener("click", () => {
@@ -81,7 +88,8 @@ playBtn.addEventListener("click", () => {
 
 // add click event on stop button
 stopBtn.addEventListener("click", () => {
-  player.load();
+  player.pause();
+  player.currentTime = 0;
   progressBar.value = 0;
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
@@ -120,14 +128,13 @@ slider.oninput = function (e) {
 // update state on progress bar when file is playing
 function updateProgress() {
   if (player.currentTime > 0) {
-    progressBar.value = (player.currentTime / player.duration) * 100;        
+    progressBar.value = (player.currentTime / player.duration) * 100;
   }
 
   player.addEventListener("ended", () => {
     playSVG.classList.add("fa-play");
     playSVG.classList.remove("fa-pause");
     progressBar.value = 0;
-    console.log("ended");
   });
 
   progressBar.addEventListener("click", (e) => {
