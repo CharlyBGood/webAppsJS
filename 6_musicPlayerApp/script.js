@@ -120,7 +120,9 @@ volOnOff.addEventListener("click", () => {
   if (volOnOff.classList.contains("on")) {
     volOnOff.classList.remove("on");
     volOnOff.innerHTML = "&#128263;";
-  } else if (volOnOff.classList.contains("off")) {
+    player.volume = 0;
+  } else {
+    player.volume = 1;
     volOnOff.classList.remove("off");
     volOnOff.classList.add("on");
     volOnOff.innerHTML = "&#128266;";
@@ -139,31 +141,41 @@ volOnOff.addEventListener("click", () => {
 //   console.log(slider.value);
 // });
 
-// update state on progress bar when file is playing
-// function updateProgress() {
-//   if (player.currentTime > 0) {
-//     progressBar.value = (player.currentTime / player.duration) * 100;
-//   }
-
-//   player.addEventListener("ended", () => {
-//     playSVG.classList.add("fa-play");
-//     playSVG.classList.remove("fa-pause");
-//     progressBar.value = 0;
-//   });
-
-//   progressBar.addEventListener("click", (e) => {
-//     progressBar.value = player.currentTime +=
-//       progressBar.value / player.currentTime;
-//   });
-// }
+player.addEventListener("ended", () => {
+  playSVG.classList.add("fa-play");
+  playSVG.classList.remove("fa-pause");
+  progressBar.value = 0;
+  currentSong.innerText = "";
+  durStart.innerText = "-";
+  durEnd.innerText = "-";
+  playBtn.addEventListener("click", () => {
+    currentSong.innerText = `Playing: ${titleS}`;  
+  })
+});
 
 player.addEventListener("timeupdate", () => {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
   progressBar.addEventListener("click", (e) => {
-    console.log(e.target.value);
-    console.log(progressBar.value);
-    console.log("you clicked");
+    progressBar.value = player.currentTime +=
+      progressBar.value / player.currentTime;
   });
+});
+
+let durStart = document.querySelector(".durationStart");
+let durEnd = document.querySelector(".durationEnd");
+
+const calcTime = (secs) => {
+  const minutes = Math.floor(secs / 60);
+  const seconds = Math.floor(secs % 60);
+  const retSecs = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${retSecs}`;
+};
+
+player.addEventListener("timeupdate", () => {
+  if (player.readyState > 0) {
+    durStart.innerText = calcTime(player.currentTime);
+    durEnd.innerText = calcTime(player.duration);
+  }
 });

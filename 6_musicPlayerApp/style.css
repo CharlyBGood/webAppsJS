@@ -152,6 +152,18 @@ progress {
   cursor: pointer;
 }
 
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-container p {
+  font-size: .9em;
+  letter-spacing: normal;
+  margin: 0 .5em;
+}
+
 /* volume slider styles */
 .volume {
   display: flex;
