@@ -32,7 +32,7 @@
             alt="recordplay and dancing cartoons gif"
             id="player_img"
           />
-          <audio id="player" ontimeupdate="updateProgress()">
+          <audio id="player">
             <source id="source" />
             Audio not supported
           </audio>
@@ -45,7 +45,7 @@
               <button id="play">
                 <i class="fa-solid fa-play"></i>
               </button>
-              <!-- <span id="play">&#9658;</span> -->              
+              <!-- <span id="play">&#9658;</span> -->
               <!-- <span id="pause">&#10074;&#10074;</span> -->
               <button id="stop">
                 <i class="fa-solid fa-stop"></i>
@@ -57,7 +57,10 @@
               <div>
                 <progress id="progress" value="0" max="100"></progress>
               </div>
-              <p>Volume</p>
+              <div class="volume-onOff">
+                <p>Volume</p>
+                <button class="on" id="volOnOff">&#128266;</button>
+              </div>
               <div class="volume">
                 <span id="volDown">-</span>
                 <input

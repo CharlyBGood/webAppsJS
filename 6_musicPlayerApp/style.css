@@ -116,6 +116,22 @@ button#play  {
   background-color: var(--col-rd);
 }
 
+button:active {
+  background-color: transparent;
+}
+
+.volume-onOff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume-onOff p {
+  background-color: #212121;
+  padding: .9em;
+  border-radius: .5em;
+}
+
 .radio {
   display: -webkit-box;
   display: -ms-flexbox;

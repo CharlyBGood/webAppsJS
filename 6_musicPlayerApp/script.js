@@ -22,7 +22,7 @@ const progressBar = document.getElementById("progress");
 let volDown = document.getElementById("volDown");
 let volUp = document.getElementById("volUp");
 
-// select section to show current audio 
+// select section to show current audio
 const currentSong = document.querySelector("#currentSong");
 
 // select audio input
@@ -73,12 +73,12 @@ function setSong2() {
 }
 
 backBtn.addEventListener("click", () => {
-  console.log("back");  
+  console.log("back");
 });
 
 nextBtn.addEventListener("click", () => {
-  console.log("next")
-})
+  console.log("next");
+});
 
 // add click event on play button
 playBtn.addEventListener("click", () => {
@@ -113,6 +113,20 @@ slider.oninput = function (e) {
   player.volume = volume;
 };
 
+let volOnOff = document.getElementById("volOnOff");
+
+volOnOff.addEventListener("click", () => {
+  volOnOff.classList.add("off");
+  if (volOnOff.classList.contains("on")) {
+    volOnOff.classList.remove("on");
+    volOnOff.innerHTML = "&#128263;";
+  } else if (volOnOff.classList.contains("off")) {
+    volOnOff.classList.remove("off");
+    volOnOff.classList.add("on");
+    volOnOff.innerHTML = "&#128266;";
+  }
+});
+
 // volDown.addEventListener("pointerdown", () => {
 //   console.log("down");
 //   slider.value -= 0.01;
@@ -126,20 +140,30 @@ slider.oninput = function (e) {
 // });
 
 // update state on progress bar when file is playing
-function updateProgress() {
+// function updateProgress() {
+//   if (player.currentTime > 0) {
+//     progressBar.value = (player.currentTime / player.duration) * 100;
+//   }
+
+//   player.addEventListener("ended", () => {
+//     playSVG.classList.add("fa-play");
+//     playSVG.classList.remove("fa-pause");
+//     progressBar.value = 0;
+//   });
+
+//   progressBar.addEventListener("click", (e) => {
+//     progressBar.value = player.currentTime +=
+//       progressBar.value / player.currentTime;
+//   });
+// }
+
+player.addEventListener("timeupdate", () => {
   if (player.currentTime > 0) {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
-
-  player.addEventListener("ended", () => {
-    playSVG.classList.add("fa-play");
-    playSVG.classList.remove("fa-pause");
-    progressBar.value = 0;
-  });
-
   progressBar.addEventListener("click", (e) => {
-    let current = (player.currentTime +=
-      progressBar.value / player.currentTime);
-    progressBar.value = current;
+    console.log(e.target.value);
+    console.log(progressBar.value);
+    console.log("you clicked");
   });
-}
+});
