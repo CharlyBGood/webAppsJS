@@ -197,6 +197,7 @@ progress {
     -webkit-appearance: none;
     background-color: var(--col-whr);
     margin: 1em 0;
+    cursor: pointer;
   }
 
   input[type="range"]::-webkit-slider-runnable-track {
@@ -210,7 +211,7 @@ progress {
     -webkit-appearance: none;
     height: 2em;
     border-radius: 0.3em;
-    cursor: pointer;
+    
     background: #0c0c0c;
     -webkit-box-shadow: -8em 0 0 8em var(--col-rd);
     box-shadow: -8em 0 0 8em var(--col-rd);

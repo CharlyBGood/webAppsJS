@@ -158,9 +158,14 @@ player.addEventListener("timeupdate", () => {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
   progressBar.addEventListener("click", (e) => {
-    progressBar.value = player.currentTime +=
-      progressBar.value / player.currentTime;
+    // progressBar.value = player.currentTime +=
+    //   progressBar.value / player.currentTime;
+    progressBar.setAttribute("max", player.duration);
+    player.currentTime = e.target.value;
+    console.log(e.target.value)
   });
+  
+  
 });
 
 
