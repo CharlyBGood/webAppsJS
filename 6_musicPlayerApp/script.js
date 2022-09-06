@@ -163,9 +163,6 @@ player.addEventListener("timeupdate", () => {
   });
 });
 
-progressBar.oninput = () => {
-  console.log("yes")
-}
 
 let durStart = document.querySelector(".durationStart");
 let durEnd = document.querySelector(".durationEnd");

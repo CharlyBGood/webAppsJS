@@ -191,11 +191,12 @@ progress {
   input[type="range"] {
     overflow: hidden;
     width: 65%;
-    height: 1em;
+    height: 1.3em;
     border: 1px solid var(--col-rd);
     border-radius: 0.2em;
     -webkit-appearance: none;
     background-color: var(--col-whr);
+    margin: 1em 0;
   }
 
   input[type="range"]::-webkit-slider-runnable-track {
@@ -310,4 +311,17 @@ footer a {
   #controls {
     width: 100%;
   }
+
+  .controls_wrapper {
+    height: 32vh;
+  }
+
+  .progress-container {
+    margin: 1em auto;
+  }
+
+  .controls_wrapper button {
+    margin: .3em .7em;
+  }
+
 }
