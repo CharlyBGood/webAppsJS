@@ -146,19 +146,32 @@ button:active {
   width: 100%;
 }
 
-progress {
-  width: 75%;
-  height: 3rem;
-  cursor: pointer;
-}
-
-.progress-container {
+.progress_section {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  margin: 1em auto;
 }
 
-.progress-container p {
+.progress-container {  
+  margin: .3em 0;
+  height: 1em;
+  width: 100%;
+  cursor: pointer;
+  border-radius: .5em;
+  border: 1px solid #212121;
+}
+
+.progress {
+  background-color: var(--col-rd);  
+  border-radius: .5em;  
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.progress_section p {
   font-size: .9em;
   letter-spacing: normal;
   margin: 0 .5em;

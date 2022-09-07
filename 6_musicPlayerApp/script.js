@@ -90,7 +90,8 @@ playBtn.addEventListener("click", () => {
 stopBtn.addEventListener("click", () => {
   player.pause();
   player.currentTime = 0;
-  progressBar.value = 0;
+  // progressBar.value = 0;
+  progress.style.width = "0%"
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
 });
@@ -170,12 +171,32 @@ player.addEventListener("timeupdate", () => {
   }
 });
 
-player.addEventListener("timeupdate", () => {  
-  if (player.currentTime > 0) {
-    progressBar.value = (player.currentTime / player.duration) * 100;
-  }  
-  progressBar.addEventListener("click", (e) => {    
-    player.currentTime = player.currentTime +=
-      progressBar.value / player.duration;       
-  });
-});
+// player.addEventListener("timeupdate", () => {  
+//   if (player.currentTime > 0) {
+//     progressBar.value = (player.currentTime / player.duration) * 100;
+//   }  
+//   progressBar.addEventListener("click", (e) => {    
+//     player.currentTime = player.currentTime +=
+//       progressBar.value / player.duration;       
+//   });
+// });
+
+player.addEventListener("timeupdate", updateProgress);
+
+let progress = document.getElementById("progress");
+
+function updateProgress(e) {
+  console.log(player.currentTime)  
+  const progressPercent = (player.currentTime / player.duration) * 100;
+  progress.style.width = `${progressPercent}%`
+}
+
+let progressContainer = document.querySelector("div.progress-container");
+
+progressContainer.addEventListener("click", (e) => {
+  console.log("clicked on progress")
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  console.log(clickX);
+  player.currentTime = (clickX / width) * player.duration;
+})
