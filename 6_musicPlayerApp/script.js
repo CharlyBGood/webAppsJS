@@ -149,25 +149,9 @@ player.addEventListener("ended", () => {
   durStart.innerText = "-";
   durEnd.innerText = "-";
   playBtn.addEventListener("click", () => {
-    currentSong.innerText = `Playing: ${titleS}`;  
-  })
-});
-
-player.addEventListener("timeupdate", () => {  
-  if (player.currentTime > 0) {
-    progressBar.value = (player.currentTime / player.duration) * 100;
-  }
-  progressBar.addEventListener("click", (e) => {
-    // progressBar.value = player.currentTime +=
-    //   progressBar.value / player.currentTime;
-    progressBar.setAttribute("max", player.duration);
-    player.currentTime = e.target.value;
-    console.log(e.target.value)
+    currentSong.innerText = `Playing: ${titleS}`;
   });
-  
-  
 });
-
 
 let durStart = document.querySelector(".durationStart");
 let durEnd = document.querySelector(".durationEnd");
@@ -184,4 +168,14 @@ player.addEventListener("timeupdate", () => {
     durStart.innerText = calcTime(player.currentTime);
     durEnd.innerText = calcTime(player.duration);
   }
+});
+
+player.addEventListener("timeupdate", () => {  
+  if (player.currentTime > 0) {
+    progressBar.value = (player.currentTime / player.duration) * 100;
+  }  
+  progressBar.addEventListener("click", (e) => {    
+    player.currentTime = player.currentTime +=
+      progressBar.value / player.duration;       
+  });
 });
