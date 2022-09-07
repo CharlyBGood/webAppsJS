@@ -128,7 +128,7 @@ button:active {
 
 .volume-onOff p {
   background-color: #212121;
-  padding: .9em;
+  padding: .7em;
   border-radius: .5em;
 }
 
@@ -156,16 +156,16 @@ button:active {
 
 .progress-container {  
   margin: .3em 0;
-  height: 1em;
+  height: 1.5em;
   width: 100%;
   cursor: pointer;
-  border-radius: .5em;
+  border-radius: .3em;
   border: 1px solid #212121;
 }
 
 .progress {
   background-color: var(--col-rd);  
-  border-radius: .5em;  
+  border-radius: .2em;  
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
@@ -204,12 +204,12 @@ button:active {
   input[type="range"] {
     overflow: hidden;
     width: 65%;
-    height: 1.3em;
+    height: 1em;
     border: 1px solid var(--col-rd);
     border-radius: 0.2em;
     -webkit-appearance: none;
     background-color: var(--col-whr);
-    margin: 1em 0;
+    margin: .7em 0;
     cursor: pointer;
   }
 

@@ -16,7 +16,7 @@
 }
 
 body {
-  font-size: var(--fs-400);
+  font-size: 10px;
   font-family: "Nanum Gothic", sans-serif;
   color: var(--col-whr);
   background-color: #000;
@@ -85,7 +85,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 0.3em;
+  gap: 1.1em;
   width: 65%;
   min-height: 100vh;
   margin: 0 auto;
@@ -137,17 +137,16 @@ body {
   font-size: var(--fs-400);
   text-decoration: none;
   color: var(--col-whr);
-  line-height: 1.4rem;
+  line-height: 1.2rem;
   letter-spacing: 0.6em;
-  text-shadow: 4px 1px var(--col-rd);
-  -webkit-animation: bigpre 11s infinite alternate;
+  text-shadow: 4px 1px var(--col-rd);  
   -webkit-animation: movingWords 11s infinite alternate;
   animation: movingWords 11s infinite alternate;
 }
 
 @-webkit-keyframes movingWords {
   50% {
-    font-size: 1.1em;
+    font-size: 1rem;
     color: var(--col-rd);
     text-shadow: -4px -1px var(--col-whr);
   }
@@ -155,7 +154,7 @@ body {
 
 @keyframes movingWords {
   50% {
-    font-size: 1.1em;
+    font-size: 1rem;
     color: var(--col-rd);
     text-shadow: -4px -1px var(--col-whr);
   }
@@ -211,7 +210,7 @@ footer {
   .main-container {
     width: 100%;
     height: auto;
-    gap: 1em;
+    gap: 1.6em;
   }
 
   .item {
@@ -219,13 +218,27 @@ footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 2em;
   }
 
   .item a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
+  @-webkit-keyframes movingWords {
+    50% {
+      font-size: .9rem;
+      color: var(--col-rd);
+      text-shadow: -4px -1px var(--col-whr);
+    }
+  }
+  
+  @keyframes movingWords {
+    50% {
+      font-size: .9rem;
+      color: var(--col-rd);
+      text-shadow: -4px -1px var(--col-whr);
+    }
+  }
   .item_img {
     width: 32vw;
     margin: 0.5em;
