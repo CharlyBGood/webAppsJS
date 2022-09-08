@@ -186,9 +186,10 @@ progressContainer.addEventListener("click", (e) => {
   console.log("clicked on progress")
   const width = progress.clientWidth;
   const clickX = e.offsetX;  
-  let duration = player.duration;  
-  console.log(clickX);
-  console.log(duration)
-  console.log(width)
+  let duration = Math.floor(player.duration);  
+  console.log("click", clickX);
+  console.log("duration", duration)
+  console.log("width",width)
   player.currentTime = (clickX / width) * duration;
+  console.log(player.currentTime)
 })
