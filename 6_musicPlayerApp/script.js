@@ -57,7 +57,7 @@ function setSong(e) {
   titleS = e.target.innerText;
   source.src = `songs/${titleS}.mp3`;
   e.target.style.background = "#3a063e";
-  currentSong.innerText = `Playing: ${titleS}`;
+  currentSong.innerText = `Song: ${titleS}`;
   player.load();
   player.play();
   playSVG.classList.remove("fa-play");
@@ -67,7 +67,7 @@ function setSong(e) {
 function setSong2() {
   titleS = songs[0];
   source.src = "songs/" + songs[0];
-  currentSong.innerText = `Playing: ${titleS.slice(0, -4)}`;
+  currentSong.innerText = `Song: ${titleS.slice(0, -4)}`;
   player.load();
   player.play();
 }
@@ -145,13 +145,10 @@ volOnOff.addEventListener("click", () => {
 player.addEventListener("ended", () => {
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
-  // progressBar.value = 0;
-  currentSong.innerText = "";
+  progress.style.width = "0%";
+  // currentSong.innerText = "";
   durStart.innerText = "-";
-  durEnd.innerText = "-";
-  playBtn.addEventListener("click", () => {
-    currentSong.innerText = `Playing: ${titleS}`;
-  });
+  durEnd.innerText = "-";  
 });
 
 let durStart = document.querySelector(".durationStart");
