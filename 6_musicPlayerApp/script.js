@@ -1,10 +1,10 @@
 // create songs list array
 const songs = [
-  "tanHop.mp3",
-  "Semiotico.mp3",
-  "Popa America.mp3",
-  "Working Class.mp3",
-  "Nos Vamos.mp3",
+  "tanHop",
+  "Semiotico",
+  "Popa America",
+  "Working Class",
+  "Nos Vamos",
 ];
 
 let songIndex = 3;
@@ -37,7 +37,7 @@ function createSongList() {
   const list = document.createElement("div");
   for (let i = 0; i < songs.length; i++) {
     const item = document.createElement("a");
-    item.appendChild(document.createTextNode(songs[i].slice(0, -4)));
+    item.appendChild(document.createTextNode(songs[i]));
     list.appendChild(item);
   }
   return list;
@@ -66,17 +66,33 @@ function setSong(e) {
 
 function setSong2() {
   titleS = songs[0];
-  source.src = "songs/" + songs[0];
-  currentSong.innerText = `Song: ${titleS.slice(0, -4)}`;
+  source.src = `songs/${songs[0]}.mp3`;
+  // currentSong.innerText = `Song: ${titleS}`;
   player.load();
   player.play();
 }
 
 backBtn.addEventListener("click", () => {
+  if (source.src = `songs/${songs[0]}.mp3`) {
+    player.pause()
+    source.src = `songs/${songs[4]}.mp3`
+    currentSong.innerText = `Song: ${songs[4]}`;
+    player.load()
+    player.play()
+  }
   console.log("back");
+  
 });
 
 nextBtn.addEventListener("click", () => {
+  if (source.src = `songs/${songs[0]}.mp3`) {
+    player.pause()
+    source.src = `songs/${songs[1]}.mp3`
+    currentSong.innerText = `Song: ${songs[1]}`;
+    player.load()
+    player.play()
+  }
+  
   console.log("next");
 });
 
@@ -84,13 +100,13 @@ nextBtn.addEventListener("click", () => {
 playBtn.addEventListener("click", () => {
   player.readyState ? player.play() : setSong2();
   changePlayBtn();
+  currentSong.innerText = `Song: ${titleS}`;
 });
 
 // add click event on stop button
 stopBtn.addEventListener("click", () => {
   player.pause();
-  player.currentTime = 0;
-  // progressBar.value = 0;
+  player.currentTime = 0;  
   progress.style.width = "0%"
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
@@ -109,11 +125,13 @@ function changePlayBtn() {
 
 // add volume slider input functionality
 const slider = document.getElementById("volumeSlider");
+player.volume = 0.5
 slider.oninput = function (e) {
   const volume = e.target.value;
-  player.volume = volume;
+  player.volume = volume / 100;  
 };
 
+// customize mute audio button
 let volOnOff = document.getElementById("volOnOff");
 
 volOnOff.addEventListener("click", () => {
@@ -130,27 +148,31 @@ volOnOff.addEventListener("click", () => {
   }
 });
 
-// volDown.addEventListener("pointerdown", () => {
-//   console.log("down");
-//   slider.value -= 0.01;
-//   console.log(slider.value);
-// });
+volDown.addEventListener("pointerdown", () => {
+  console.log("down");
+  slider.value--;
+  player.volume = slider.value / 100;
+  console.log(slider.value);
+  console.log(player.volume)
+});
 
-// volUp.addEventListener("pointerdown", () => {
-//   console.log("up");
-//   slider.value += 0.1;
-//   console.log(slider.value);
-// });
+volUp.addEventListener("pointerdown", () => {
+  console.log("up");
+  slider.value++;
+  player.volume = slider.value / 100  
+});
 
+// set behaviour when the audio track ends
 player.addEventListener("ended", () => {
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
   progress.style.width = "0%";
-  // currentSong.innerText = "";
+  currentSong.innerText = "";
   durStart.innerText = "-";
   durEnd.innerText = "-";  
 });
 
+// convert audio duration and currentTime and convert the value into traditional displaying min/secs
 let durStart = document.querySelector(".durationStart");
 let durEnd = document.querySelector(".durationEnd");
 
@@ -168,6 +190,7 @@ player.addEventListener("timeupdate", () => {
   }
 });
 
+// create custom progress bar and add eventlisteners to move to with mouseclick
 player.addEventListener("timeupdate", updateProgress);
 
 let progress = document.getElementById("progress");
@@ -180,7 +203,7 @@ function updateProgress(e) {
 
 let progressContainer = document.querySelector(".progress-container");
 
-progressContainer.addEventListener("click", (e) => {  
+progressContainer.addEventListener("pointerdown", (e) => {  
   const width = progressContainer.clientWidth;
   const clickX = e.offsetX;  
   let duration = Math.floor(player.duration);  
