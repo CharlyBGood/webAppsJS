@@ -145,7 +145,7 @@ volOnOff.addEventListener("click", () => {
 player.addEventListener("ended", () => {
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
-  progressBar.value = 0;
+  // progressBar.value = 0;
   currentSong.innerText = "";
   durStart.innerText = "-";
   durEnd.innerText = "-";
@@ -176,20 +176,16 @@ player.addEventListener("timeupdate", updateProgress);
 let progress = document.getElementById("progress");
 
 function updateProgress(e) {
-  const progressPercent = (player.currentTime / player.duration) * 100;
+  const {duration, currentTime} = e.target;
+  const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`
 }
 
 let progressContainer = document.querySelector(".progress-container");
 
-progressContainer.addEventListener("click", (e) => {
-  console.log("clicked on progress")
-  const width = progress.clientWidth;
+progressContainer.addEventListener("click", (e) => {  
+  const width = progressContainer.clientWidth;
   const clickX = e.offsetX;  
   let duration = Math.floor(player.duration);  
-  console.log("click", clickX);
-  console.log("duration", duration)
-  console.log("width",width)
-  player.currentTime = (clickX / width) * duration;
-  console.log(player.currentTime)
+  player.currentTime = (clickX / width) * duration;  
 })
