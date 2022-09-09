@@ -23,8 +23,8 @@ html {
   font-size: 10px;
   letter-spacing: 4px;
   color: var(--col-whr);
-  -webkit-user-select: none; 
-    user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   margin: 0;
   padding: 0;
 }
@@ -96,7 +96,7 @@ html {
   height: 2em;
   cursor: pointer;
   color: var(--col-whp);
-  padding: .4em;
+  padding: 0.4em;
   margin: 0.3em;
   border-radius: 0.5em;
   background-color: #212121;
@@ -112,7 +112,7 @@ html {
   padding-right: 0.7em;
 }
 
-button#play  {
+button#play {
   background-color: var(--col-rd);
 }
 
@@ -128,8 +128,8 @@ button:active {
 
 .volume-onOff p {
   background-color: #212121;
-  padding: .7em;
-  border-radius: .5em;
+  padding: 0.7em;
+  border-radius: 0.5em;
 }
 
 .radio {
@@ -154,27 +154,26 @@ button:active {
   margin: 1em auto;
 }
 
-.progress-container {  
-  margin: .3em 0;
+.progress-container {
+  margin: 0.3em 0;
   height: 1.5em;
   width: 100%;
   cursor: pointer;
-  border-radius: .3em;
-  border: 1px solid #212121;
+  border-radius: 0.3em;
 }
 
 .progress {
-  background-color: var(--col-rd);  
-  border-radius: .2em;  
+  background-color: var(--col-rd);
+  border-radius: 0.2em;
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
 }
 
 .progress_section p {
-  font-size: .9em;
+  font-size: 0.9em;
   letter-spacing: normal;
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 /* volume slider styles */
@@ -182,15 +181,15 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .volume span {
   font-size: 1.4em;
   background-color: #212121;
-  padding: 0 .2em;
-  border-radius: .3em;
-  cursor: pointer;      
+  padding: 0 0.2em;
+  border-radius: 0.3em;
+  cursor: pointer;
 }
 
 .volume span:active {
@@ -205,16 +204,15 @@ button:active {
     overflow: hidden;
     width: 65%;
     height: 1em;
-    border: 1px solid var(--col-rd);
     border-radius: 0.2em;
     -webkit-appearance: none;
     background-color: var(--col-whr);
-    margin: .7em 0;
+    margin: 0.7em 0;
     cursor: pointer;
   }
 
   input[type="range"]::-webkit-slider-runnable-track {
-    height: 0.6em;
+    height: 1em;
     -webkit-appearance: none;
     color: var(--col-rd);
   }
@@ -222,8 +220,7 @@ button:active {
   input[type="range"]::-webkit-slider-thumb {
     width: 1em;
     -webkit-appearance: none;
-    height: 2em;
-    border-radius: 0.3em;
+    height: 1em;
     
     background: #0c0c0c;
     -webkit-box-shadow: -8em 0 0 8em var(--col-rd);
@@ -335,7 +332,6 @@ footer a {
   }
 
   .controls_wrapper button {
-    margin: .3em .7em;
+    margin: 0.3em 0.7em;
   }
-
 }
