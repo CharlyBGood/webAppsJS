@@ -70,10 +70,11 @@ function setSong2() {
   // currentSong.innerText = `Song: ${titleS}`;
   player.load();
   player.play();
+  console.log(source.src);
 }
 
 backBtn.addEventListener("click", () => {
-  songIndex--
+  songIndex--;  
   if (songIndex < 0) {
     songIndex = songs.length - 1;
   }
@@ -82,14 +83,14 @@ backBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   songIndex++
-  if (songIndex > songs.length - 1) {
+  if (songIndex > 4) {
     songIndex = 0;
   }
   setNext(songs[songIndex]);
 });
 
 function setNext(song) {
-  source.src = `songs/${song}.mp3`;  
+  source.src = `songs/${song}.mp3`;
   currentSong.innerText = `Song: ${song}`;
   player.load();
   player.play();
