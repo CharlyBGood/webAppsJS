@@ -1,13 +1,13 @@
 // create songs list array
 const songs = [
   "tanHop",
+  "Fantasias y Mal",
   "Semiotico",
+  "Samp",
   "Popa America",
   "Working Class",
   "Nos Vamos",
 ];
-
-let songIndex = 0;
 
 // select player buttons and elements
 let playerImg = document.querySelector(".radio");
@@ -32,6 +32,10 @@ const source = document.getElementById("source");
 // create title variable
 let titleS;
 
+
+// let songIndex = 0;
+let songIndex = source.src;
+
 // create list of available songs
 function createSongList() {
   const list = document.createElement("div");
@@ -43,14 +47,16 @@ function createSongList() {
   return list;
 }
 
+// display songlist on DOM
 const songList = document.getElementById("songList");
 songList.appendChild(createSongList());
 
+// add eventlistener into links 
 const links = songList.querySelectorAll("a");
 for (const link of links) {
-  link.addEventListener("click", setSong);
-  link.classList.add("song");
+  link.addEventListener("click", setSong);  
 }
+
 
 // when called the selected file will be played
 function setSong(e) {
@@ -70,7 +76,6 @@ function setSong2() {
   // currentSong.innerText = `Song: ${titleS}`;
   player.load();
   player.play();
-  console.log(source.src);
 }
 
 backBtn.addEventListener("click", () => {
@@ -83,9 +88,9 @@ backBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   songIndex++
-  if (songIndex > 4) {
-    songIndex = 0;
-  }
+  if (songIndex > (songs.length - 1)) {
+    songIndex = 0;    
+  }  
   setNext(songs[songIndex]);
 });
 
@@ -149,16 +154,12 @@ volOnOff.addEventListener("click", () => {
   }
 });
 
-volDown.addEventListener("pointerdown", () => {
-  console.log("down");
+volDown.addEventListener("pointerdown", () => {  
   slider.value--;
-  player.volume = slider.value / 100;
-  console.log(slider.value);
-  console.log(player.volume);
+  player.volume = slider.value / 100;  
 });
 
-volUp.addEventListener("pointerdown", () => {
-  console.log("up");
+volUp.addEventListener("pointerdown", () => {  
   slider.value++;
   player.volume = slider.value / 100;
 });
