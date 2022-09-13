@@ -1,6 +1,6 @@
 // create songs list array
 const songs = [
-  "tanHop",  
+  "tanHop",
   "Semiotico",
   "Samp",
   "Popa America",
@@ -32,8 +32,7 @@ const source = document.getElementById("source");
 // create title variable
 let titleS;
 
-// let songIndex = 0;
-let songIndex;
+let songIndex = 0;
 
 // create list of available songs
 function createSongList() {
@@ -41,7 +40,8 @@ function createSongList() {
   for (let i = 0; i < songs.length; i++) {
     const item = document.createElement("a");
     item.appendChild(document.createTextNode(songs[i]));
-    list.appendChild(item);
+    item.setAttribute("data-index", i);
+    list.appendChild(item);    
   }
   return list;
 }
@@ -51,42 +51,27 @@ const songList = document.getElementById("songList");
 songList.appendChild(createSongList());
 
 // add eventlistener into links
+// change songIndex value to be the same as data-index attribute on links
 const links = songList.querySelectorAll("a");
-for (const link of links) {
-  link.addEventListener("click", playLinkSong);
-}
-
-// setSong(songs[songIndex]);
-
-function playLinkSong(e) {
-  titleS = e.target.innerText;
-  source.src = `songs/${titleS}.mp3`;
-  e.target.style.background = "#3a063e";
-  currentSong.innerText = `Song: ${titleS}`;
-  player.load();
-  player.play();
-  playSVG.classList.remove("fa-play");
-  playSVG.classList.add("fa-pause");
+for (const link of links) {  
+  link.addEventListener("click", function(e) {    
+    songIndex = link.getAttribute("data-index")
+    titleS = e.target.innerText;  
+    source.src = `songs/${titleS}.mp3`;  
+    e.target.style.background = "#3a063e";
+    currentSong.innerText = `Song: ${titleS}`;    
+    player.load();
+    player.play();
+    playSVG.classList.remove("fa-play");
+    playSVG.classList.add("fa-pause");    
+  });  
 }
 
 // when called the selected file will be played
 function setSong(song) {
-  // titleS = e.target.innerText;
   source.src = `songs/${song}.mp3`;
-  // e.target.style.background = "#3a063e";
   currentSong.innerText = `Song: ${song}`;
-  // player.load();
-  // player.play();
-  // playSVG.classList.remove("fa-play");
-  // playSVG.classList.add("fa-pause");
-}
-
-function setSong2() {
-  titleS = songs[0];
-  source.src = `songs/${songs[0]}.mp3`;
-  currentSong.innerText = `Song: ${titleS}`;
   player.load();
-  player.play();
 }
 
 backBtn.addEventListener("click", () => {
@@ -94,54 +79,43 @@ backBtn.addEventListener("click", () => {
   if (songIndex < 0) {
     songIndex = songs.length - 1;
   }
-  // setSong(songs[songIndex]);
-  player.load();
+  setSong(songs[songIndex]);
   player.play();
 });
 
-// nextBtn.addEventListener("click", () => {
-//   songIndex++
-//   if (songIndex > (songs.length - 1)) {
-//     songIndex = 0;
-//   }
-//   setNext(songs[songIndex]);
-// });
-
-// function setNext(song) {
-//   source.src = `songs/${song}.mp3`;
-//   currentSong.innerText = `Song: ${song}`;
-//   player.load();
-//   player.play();
-// }
+nextBtn.addEventListener("click", () => {
+  songIndex++;
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+  setSong(songs[songIndex]);
+  player.play();
+});
 
 function playSong() {
   setSong(songs[songIndex]);
   playSVG.classList.remove("fa-play");
   playSVG.classList.add("fa-pause");
-  player.readyState ? player.play() : setSong2();
-  // currentSong.innerText = `Song: ${songs[songIndex]}`;
+  player.play();  
 }
 
 function pauseSong() {
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
-
   player.pause();
 }
 
 // add click event on play button
-playBtn.addEventListener("click", () => {
-  const isPlaying = playSVG.classList.contains("fa-pause");
+playBtn.addEventListener("click", playOrNot);
 
+function playOrNot() {
+  const isPlaying = playSVG.classList.contains("fa-pause");
   if (isPlaying) {
     pauseSong();
   } else {
     playSong();
-  }
-
-  // player.readyState ? player.play() : setSong2();
-  // currentSong.innerText = `Song: ${titleS}`;
-});
+  }  
+}
 
 // add click event on stop button
 stopBtn.addEventListener("click", playerStop);
@@ -152,17 +126,6 @@ function playerStop() {
   playSVG.classList.add("fa-play");
   playSVG.classList.remove("fa-pause");
 }
-
-// function changePlayBtn() {
-//   if (playSVG.classList.contains("fa-play")) {
-//     playSVG.classList.remove("fa-play");
-//     playSVG.classList.add("fa-pause");
-//   } else {
-//     playSVG.classList.add("fa-play");
-//     playSVG.classList.remove("fa-pause");
-//     player.pause();
-//   }
-// }
 
 // }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 

@@ -16,7 +16,7 @@
 }
 
 body {
-  font-size: 10px;
+  font-size: 13px;
   font-family: "Nanum Gothic", sans-serif;
   color: var(--col-whr);
   background-color: #000;
@@ -52,7 +52,9 @@ body {
 
 .nav-link_2 {
   /* padding: 1.5em; */
+  font-size: 1.1em;
   margin: 1em;
+  margin-right: 3em;
   text-align: right;
   color: var(--col-whr);
   text-decoration: none;
