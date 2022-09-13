@@ -198,11 +198,29 @@ button:active {
   padding-right: 0.3em;
 }
 
+.slider-vol-container {
+  width: 100%;
+  height: 1em;
+  border-bottom: 1px solid var(--col-whp);
+  cursor: pointer;
+}
+
+.volume-slider {
+  width: 50%;
+  height: .9em;
+  background-color: var(--col-rd);  
+}
+
+#volumeSlider {
+  cursor: pointer;
+  
+}
+
 /*Chrome*/
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="range"] {
     overflow: hidden;
-    width: 65%;
+    width: 50%;
     height: 1em;
     border-radius: 0.2em;
     -webkit-appearance: none;
@@ -220,8 +238,7 @@ button:active {
   input[type="range"]::-webkit-slider-thumb {
     width: 1em;
     -webkit-appearance: none;
-    height: 1em;
-    
+    height: 1em;    
     background: #0c0c0c;
     -webkit-box-shadow: -8em 0 0 8em var(--col-rd);
     box-shadow: -8em 0 0 8em var(--col-rd);

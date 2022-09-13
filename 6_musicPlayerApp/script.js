@@ -1,11 +1,11 @@
 // create songs list array
 const songs = [
-  "tanHop",
-  "Fantasias y Mal",
+  "tanHop",  
   "Semiotico",
   "Samp",
   "Popa America",
   "Working Class",
+  "Fantasias y Mal",
   "Nos Vamos",
 ];
 
@@ -32,9 +32,8 @@ const source = document.getElementById("source");
 // create title variable
 let titleS;
 
-
 // let songIndex = 0;
-let songIndex = source.src;
+let songIndex;
 
 // create list of available songs
 function createSongList() {
@@ -51,15 +50,15 @@ function createSongList() {
 const songList = document.getElementById("songList");
 songList.appendChild(createSongList());
 
-// add eventlistener into links 
+// add eventlistener into links
 const links = songList.querySelectorAll("a");
 for (const link of links) {
-  link.addEventListener("click", setSong);  
+  link.addEventListener("click", playLinkSong);
 }
 
+// setSong(songs[songIndex]);
 
-// when called the selected file will be played
-function setSong(e) {
+function playLinkSong(e) {
   titleS = e.target.innerText;
   source.src = `songs/${titleS}.mp3`;
   e.target.style.background = "#3a063e";
@@ -70,42 +69,78 @@ function setSong(e) {
   playSVG.classList.add("fa-pause");
 }
 
+// when called the selected file will be played
+function setSong(song) {
+  // titleS = e.target.innerText;
+  source.src = `songs/${song}.mp3`;
+  // e.target.style.background = "#3a063e";
+  currentSong.innerText = `Song: ${song}`;
+  // player.load();
+  // player.play();
+  // playSVG.classList.remove("fa-play");
+  // playSVG.classList.add("fa-pause");
+}
+
 function setSong2() {
   titleS = songs[0];
   source.src = `songs/${songs[0]}.mp3`;
-  // currentSong.innerText = `Song: ${titleS}`;
+  currentSong.innerText = `Song: ${titleS}`;
   player.load();
   player.play();
 }
 
 backBtn.addEventListener("click", () => {
-  songIndex--;  
+  songIndex--;
   if (songIndex < 0) {
     songIndex = songs.length - 1;
   }
-  setNext(songs[songIndex]);
-});
-
-nextBtn.addEventListener("click", () => {
-  songIndex++
-  if (songIndex > (songs.length - 1)) {
-    songIndex = 0;    
-  }  
-  setNext(songs[songIndex]);
-});
-
-function setNext(song) {
-  source.src = `songs/${song}.mp3`;
-  currentSong.innerText = `Song: ${song}`;
+  // setSong(songs[songIndex]);
   player.load();
   player.play();
+});
+
+// nextBtn.addEventListener("click", () => {
+//   songIndex++
+//   if (songIndex > (songs.length - 1)) {
+//     songIndex = 0;
+//   }
+//   setNext(songs[songIndex]);
+// });
+
+// function setNext(song) {
+//   source.src = `songs/${song}.mp3`;
+//   currentSong.innerText = `Song: ${song}`;
+//   player.load();
+//   player.play();
+// }
+
+function playSong() {
+  setSong(songs[songIndex]);
+  playSVG.classList.remove("fa-play");
+  playSVG.classList.add("fa-pause");
+  player.readyState ? player.play() : setSong2();
+  // currentSong.innerText = `Song: ${songs[songIndex]}`;
+}
+
+function pauseSong() {
+  playSVG.classList.add("fa-play");
+  playSVG.classList.remove("fa-pause");
+
+  player.pause();
 }
 
 // add click event on play button
 playBtn.addEventListener("click", () => {
-  player.readyState ? player.play() : setSong2();
-  changePlayBtn();
-  currentSong.innerText = `Song: ${titleS}`;
+  const isPlaying = playSVG.classList.contains("fa-pause");
+
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+
+  // player.readyState ? player.play() : setSong2();
+  // currentSong.innerText = `Song: ${titleS}`;
 });
 
 // add click event on stop button
@@ -118,16 +153,18 @@ function playerStop() {
   playSVG.classList.remove("fa-pause");
 }
 
-function changePlayBtn() {
-  if (playSVG.classList.contains("fa-play")) {
-    playSVG.classList.remove("fa-play");
-    playSVG.classList.add("fa-pause");
-  } else {
-    playSVG.classList.add("fa-play");
-    playSVG.classList.remove("fa-pause");
-    player.pause();
-  }
-}
+// function changePlayBtn() {
+//   if (playSVG.classList.contains("fa-play")) {
+//     playSVG.classList.remove("fa-play");
+//     playSVG.classList.add("fa-pause");
+//   } else {
+//     playSVG.classList.add("fa-play");
+//     playSVG.classList.remove("fa-pause");
+//     player.pause();
+//   }
+// }
+
+// }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 // add volume slider input functionality
 const slider = document.getElementById("volumeSlider");
@@ -136,6 +173,16 @@ slider.oninput = function (e) {
   const volume = e.target.value;
   player.volume = volume / 100;
 };
+
+volDown.addEventListener("pointerdown", () => {
+  slider.value--;
+  player.volume = slider.value / 100;
+});
+
+volUp.addEventListener("pointerdown", () => {
+  slider.value++;
+  player.volume = slider.value / 100;
+});
 
 // customize mute audio button
 let volOnOff = document.getElementById("volOnOff");
@@ -147,21 +194,12 @@ volOnOff.addEventListener("click", () => {
     volOnOff.innerHTML = "&#128263;";
     player.volume = 0;
   } else {
-    player.volume = 1;
+    player.volume = slider.value / 100;
+    console.log(slider.value);
     volOnOff.classList.remove("off");
     volOnOff.classList.add("on");
     volOnOff.innerHTML = "&#128266;";
   }
-});
-
-volDown.addEventListener("pointerdown", () => {  
-  slider.value--;
-  player.volume = slider.value / 100;  
-});
-
-volUp.addEventListener("pointerdown", () => {  
-  slider.value++;
-  player.volume = slider.value / 100;
 });
 
 // set behaviour when the audio track ends
