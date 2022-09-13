@@ -2,6 +2,7 @@
 const songs = [
   "tanHop",
   "Semiotico",
+  "Luz Fugaz",
   "Samp",
   "Popa America",
   "Working Class",
