@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Drum Machine</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SampleMe</title>
+  </head>
+  <body>
+    <nav class="topnav" id="nav-bar">
+      <a class="nav-link_1" href="../index.html">
+        <img class="header-logo" src="../img/headerlogo.png" alt="" />
+      </a>
+      <h2>SampleMe</h2>
+    </nav>
     <div class="drum-container">
-        <div data-key="65" class="key">
-            <kbd>A</kbd>
-            <span class="sound">kick</span>
-        </div>
-        <div data-key="83" class="key">
-            <kbd>S</kbd>
-            <span class="sound">hihat</span>
-        </div>
-        <div data-key="68" class="key">
-            <kbd>D</kbd>
-            <span class="sound">clap</span>
-        </div>
-        <div data-key="70" class="key">
-            <kbd>F</kbd>
-            <span class="sound">openhat</span>
-        </div>
-        <div data-key="71" class="key">
-            <kbd>G</kbd>
-            <span class="sound">rimshot</span>
-        </div>
-        <div data-key="72" class="key">
-            <kbd>H</kbd>
-            <span class="sound">lowtom</span>
-        </div>
-        <div data-key="74" class="key">
-            <kbd>J</kbd>
-            <span class="sound">snare</span>
-        </div>
-        <div data-key="75" class="key">
-            <kbd>K</kbd>
-            <span class="sound">cowbell</span>
-        </div>
-        <div data-key="76" class="key">
-            <kbd>L</kbd>
-            <span class="sound">cabasa</span>
-        </div>
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+      </div>
     </div>
     <audio data-key="65" src="sounds/Kick.wav"></audio>
     <audio data-key="83" src="sounds/HiHat.wav"></audio>
@@ -55,26 +55,13 @@
     <audio data-key="75" src="sounds/CowBell.wav"></audio>
     <audio data-key="76" src="sounds/Cabasa.wav"></audio>
 
-    <script>
-    function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
+    <footer>
+      <p>
+        App & Samples by
+        <a href="https://soundcloud.com/charly-bgood"> Charly BGood </a>
+      </p>
+    </footer>
 
-    function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if (!audio) return;
-
-    key.classList.add('playing');
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-    const keys = Array.from(document.querySelectorAll('.key'));
-    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-    window.addEventListener('keydown', playSound);
-    </script>
-   
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
