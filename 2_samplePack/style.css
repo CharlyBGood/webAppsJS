@@ -16,7 +16,7 @@
 }
 
 body,
-html {
+html {  
   font-size: 10px;
   font-family: "Nanum Gothic", sans-serif;
   color: var(--col-whr);
@@ -58,6 +58,8 @@ html {
   color: rgb(207, 35, 35);
   background: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 0.5rem black;
+  cursor: pointer;
+  background-image: url("img/bolas.gif");
 }
 
 .playing {
@@ -97,6 +99,7 @@ footer a {
 @media (max-width: 800px) {
   .drum-container {
     margin: 37% auto;
+    width: 70%;
   }
 
   .key {

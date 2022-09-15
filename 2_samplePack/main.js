@@ -20,21 +20,9 @@ for (const pad of pads) {
     source.src = `sounds/${nameZ}.wav`;
     sound.load();
     sound.play();
+    pad.classList.add("playing");
     console.log(source.src);
   });
-}
-
-// let aPad = document.querySelector("div.key");
-// aPad.addEventListener("pointerdown", playing);
-
-// function playing(e) {
-//   console.log("played")
-//   sound.play();
-// }
-
-function playSong() {
-  loadSound(tracks[soundIndex]);
-  sound.play();
 }
 
 function removeTransition(e) {
