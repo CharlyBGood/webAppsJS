@@ -16,7 +16,7 @@
       </a>
       <h2>SampleMe</h2>
     </nav>
-    <div class="drum-container">
+    <div id="drum-container" class="drum-container">
       <div data-key="65" class="key">
         <kbd>A</kbd>
       </div>
@@ -45,16 +45,48 @@
         <kbd>L</kbd>
       </div>
     </div>
-    <audio id="aPad" data-key="65" src="sounds/A.wav"></audio>
-    <audio data-key="83" src="sounds/S.wav"></audio>
-    <audio data-key="68" src="sounds/D.wav"></audio>
-    <audio data-key="70" src="sounds/F.wav"></audio>
-    <audio data-key="71" src="sounds/G.wav"></audio>
-    <audio data-key="72" src="sounds/H.wav"></audio>
-    <audio data-key="74" src="sounds/J.wav"></audio>
-    <audio data-key="75" src="sounds/K.wav"></audio>
-    <audio data-key="76" src="sounds/L.wav"></audio>
-    
+    <div class="audio-container">
+      <audio id="sound">
+        <source id="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" id="aPad" data-key="65" src="sounds/A.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="83" src="sounds/S.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="68" src="sounds/D.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="70" src="sounds/F.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="71" src="sounds/G.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="72" src="sounds/H.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="74" src="sounds/J.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="75" src="sounds/K.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+      <audio class="sound" data-key="76" src="sounds/L.wav">
+        <source class="source" />
+        Audio not supported
+      </audio>
+    </div>
     <footer>
       <p>
         App & Samples by

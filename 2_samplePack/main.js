@@ -1,23 +1,39 @@
-const tracks = [
-  "A",
-  "S",
-  "D",
-  "F",
-  "G",
-  "H",
-  "J",
-  "K",
-  "L"
-];
+const tracks = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 
-let sound = document.getElementById("aPad");
+let soundIndex = 0;
 
-let aPad = document.querySelector("div.key");
+// let sound = document.getElementById("aPad");
+let sound = document.getElementById("sound");
+// let source = document.querySelectorAll("source.source");
+let source = document.getElementById("source");
 
-aPad.addEventListener("pointerdown", playing);
+const drumz = document.getElementById("drum-container");
 
-function playing(e) {
-  console.log("played")
+const pads = drumz.querySelectorAll(".key");
+for (let i = 0; i < pads.length; i++) {
+  pads[i].setAttribute("data-index", i);
+}
+for (const pad of pads) {
+  pad.addEventListener("pointerdown", (e) => {
+    soundIndex = pad.getAttribute("data-index");
+    nameZ = e.target.innerText;
+    source.src = `sounds/${nameZ}.wav`;
+    sound.load();
+    sound.play();
+    console.log(source.src);
+  });
+}
+
+// let aPad = document.querySelector("div.key");
+// aPad.addEventListener("pointerdown", playing);
+
+// function playing(e) {
+//   console.log("played")
+//   sound.play();
+// }
+
+function playSong() {
+  loadSound(tracks[soundIndex]);
   sound.play();
 }
 
@@ -34,10 +50,8 @@ function playSound(e) {
   key.classList.add("playing");
   audio.currentTime = 0;
   audio.play();
-  
 }
 
 const keys = Array.from(document.querySelectorAll(".key"));
 keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
 window.addEventListener("keydown", playSound);
-
