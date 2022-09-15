@@ -99,8 +99,8 @@ footer a {
 @media (max-width: 800px) {
   .drum-container {
     margin: 37% auto;
-    width: 70%;
-    gap: 2em;
+    width: 100%;
+    gap: 1em;
   }
 
   .key {
