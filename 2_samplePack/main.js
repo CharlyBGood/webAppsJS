@@ -1,3 +1,4 @@
+let context = new AudioContext();
 const tracks = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 
 let soundIndex = 0;
@@ -18,6 +19,7 @@ for (const pad of pads) {
     soundIndex = pad.getAttribute("data-index");
     nameZ = e.target.innerText;
     source.src = `sounds/${nameZ}.wav`;
+    sound.currentTime = 0;
     sound.load();
     sound.play();
     pad.classList.add("playing");
