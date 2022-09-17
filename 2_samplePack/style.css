@@ -34,6 +34,20 @@ html {
   margin-right: 3em;
 }
 
+.synth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 14% auto;
+}
+
+input[type="range"] {
+  appearance: none;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
 .drum-container {
   display: flex;
   align-items: center;
@@ -42,7 +56,7 @@ html {
   width: 85%;
   height: 50vh;
   /* margin: 0 auto; */
-  margin: 14% auto;
+  /* margin: 14% auto; */
 }
 
 .key {
