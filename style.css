@@ -15,6 +15,24 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+a,
+span {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
 body {
   font-size: 13px;
   font-family: "Nanum Gothic", sans-serif;
@@ -69,8 +87,8 @@ body {
   text-align: center;
   font-size: var(--fs-400);
   letter-spacing: 0.6em;
-  margin: .3em 1em;
-  padding: .3em;
+  margin: 0.3em 1em;
+  padding: 0.3em;
 }
 
 .main-container {
@@ -141,7 +159,7 @@ body {
   color: var(--col-whr);
   line-height: 1.2rem;
   letter-spacing: 0.6em;
-  text-shadow: 4px 1px var(--col-rd);  
+  text-shadow: 4px 1px var(--col-rd);
   -webkit-animation: movingWords 11s infinite alternate;
   animation: movingWords 11s infinite alternate;
 }
@@ -228,15 +246,15 @@ footer {
 
   @-webkit-keyframes movingWords {
     50% {
-      font-size: .9rem;
+      font-size: 0.9rem;
       color: var(--col-rd);
       text-shadow: -4px -1px var(--col-whr);
     }
   }
-  
+
   @keyframes movingWords {
     50% {
-      font-size: .9rem;
+      font-size: 0.9rem;
       color: var(--col-rd);
       text-shadow: -4px -1px var(--col-whr);
     }
@@ -247,5 +265,11 @@ footer {
   }
   .footer {
     font-size: 1.1em;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none;
   }
 }

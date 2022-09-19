@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
 :root {
+  color-scheme: light only;
   --fs-600: 2rem;
   --fs-500: 1.35rem;
   --fs-400: 1rem;
@@ -15,8 +16,30 @@
   box-sizing: border-box;
 }
 
+html,
 body,
-html {  
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+a,
+span {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html {
+  height: webkit-fill-available;
+}
+
+body,
+html {
   font-size: 10px;
   font-family: "Nanum Gothic", sans-serif;
   color: var(--col-whr);
@@ -39,7 +62,8 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 14% auto;
+  /* margin: 14% auto; */
+  height: 100vh;
 }
 
 input[type="range"] {
@@ -67,7 +91,7 @@ input[type="range"] {
   /* flex: 1; */
   margin: 0.5em;
   padding: 1rem 0.5rem;
-  transition: all 0.07s ease;  
+  transition: all 0.07s ease;
   text-align: center;
   color: rgb(207, 35, 35);
   background: rgba(0, 0, 0, 0.4);
@@ -112,7 +136,7 @@ footer a {
 
 @media (max-width: 800px) {
   .drum-container {
-    margin: 37% auto;
+    /* margin: 37% auto; */
     width: 100%;
     gap: 1em;
   }
@@ -120,5 +144,11 @@ footer a {
   .key {
     /* margin: 2.5em; */
     padding: 4rem 0.5rem;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none;
   }
 }

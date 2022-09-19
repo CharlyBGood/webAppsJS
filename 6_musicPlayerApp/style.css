@@ -14,6 +14,24 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+a,
+span {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
 body,
 html {
   font-family: "Nanum Gothic", sans-serif;
@@ -207,13 +225,12 @@ button:active {
 
 .volume-slider {
   width: 50%;
-  height: .9em;
-  background-color: var(--col-rd);  
+  height: 0.9em;
+  background-color: var(--col-rd);
 }
 
 #volumeSlider {
   cursor: pointer;
-  
 }
 
 /*Chrome*/
@@ -238,7 +255,7 @@ button:active {
   input[type="range"]::-webkit-slider-thumb {
     width: 1em;
     -webkit-appearance: none;
-    height: 1em;    
+    height: 1em;
     background: #0c0c0c;
     -webkit-box-shadow: -8em 0 0 8em var(--col-rd);
     box-shadow: -8em 0 0 8em var(--col-rd);
@@ -350,5 +367,11 @@ footer a {
 
   .controls_wrapper button {
     margin: 0.3em 0.7em;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none;
   }
 }

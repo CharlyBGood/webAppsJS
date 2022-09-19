@@ -29,6 +29,24 @@ html {
   text-size-adjust: none;
 }
 
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+a,
+span {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -363,5 +381,11 @@ input[type="range"]::-webkit-slider-thumb {
   input[type="range"] {
     width: 5em;
     margin: 0 0.3em;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none;
   }
 }
