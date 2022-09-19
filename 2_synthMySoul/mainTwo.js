@@ -32,7 +32,7 @@ for (const pad of pads) {
     const actx = new (AudioContext || webkitAudioContext)();
     if (!actx) throw "Not supported!";
     osc = actx.createOscillator();
-    osc.type = "triangle";
+    osc.type = "sine";
     osc.frequency.value = NOTES[pad.dataset.note]; // Hz = middle A
     osc.connect(actx.destination);
     osc.start();
