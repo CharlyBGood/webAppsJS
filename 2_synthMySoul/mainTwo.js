@@ -21,7 +21,6 @@ const waveSlider = document.getElementById("waveSlider");
 //   oscillator.frequency.value = val * 400;
 // })
 
-
 const pads = drumz.querySelectorAll(".key");
 for (let i = 0; i < pads.length; i++) {
   pads[i].setAttribute("data-index", i);
@@ -44,6 +43,11 @@ for (const pad of pads) {
     pad.classList.remove("playing");
   });
 }
+
+// function playKeyboard(e) {
+  
+  
+// }
 
 function removeTransition(e) {
   if (e.propertyName !== "transform") return;
