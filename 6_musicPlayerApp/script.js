@@ -3,7 +3,6 @@ const songs = [
   "tanHop",
   "Semiotico",
   "Pianotec",
-  "Samp",
   "Popa America",
   "Working Class",
   "Nos Vamos",
