@@ -221,7 +221,7 @@ a {
   background-color: var(--bgrColor);
   border-radius: 0.3em;
   border: none;
-  width: 100%;
+  width: 86%;
   margin: 0 auto;
 }
 
@@ -270,10 +270,11 @@ div.description-title:hover {
 .refresh svg,
 .refresh span {
   color: var(--redWords);
-  font-size: 1.2em;
+  font-size: 1.5em;
   cursor: pointer;
   border-radius: 3em;
-  margin: 0.3em;
+  /* margin: 0.3em; */
+  padding: 0 0.3em;
 }
 
 button.refresh:active {
@@ -298,6 +299,7 @@ button.refresh:active {
   -ms-grid-row-align: center;
   align-self: center;
   font-size: 0.8rem;
+  margin-left: 1em;
 }
 
 input[type="range"] {

@@ -6,7 +6,6 @@ const songs = [
   "Samp",
   "Popa America",
   "Working Class",
-  "Fantasias y Mal",
   "Nos Vamos",
 ];
 
