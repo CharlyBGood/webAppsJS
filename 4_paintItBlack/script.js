@@ -54,7 +54,7 @@ let brushMagic = document.getElementById("magic_button");
 brushMagic.addEventListener("click", brushMc);
 
 function brushMc() {
-  brushMagic.style.backgroundColor = colorX;
+  
   magicButton = !magicButton;
 }
 
@@ -81,6 +81,21 @@ reload.addEventListener("click", reloadCanvas);
 
 function reloadCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bshBtn.style.backgroundColor = "#12e671d0";
+  bgrBtn1.style.backgroundColor = "#e69b12d0";
+  brushPckr.value = "#000000";
+  bgrPckr.value = "#000000";
+}
+
+// deshacer trazo
+
+let undoBtn = document.getElementById("undo");
+undoBtn.addEventListener("click", undoTrace);
+
+function undoTrace(e) {
+  e.preventDefault()
+  
+  
 }
 
 // funciones para dibujar según se mueve el puntero
