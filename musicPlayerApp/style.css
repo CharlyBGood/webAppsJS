@@ -241,6 +241,7 @@ button:active {
     width: 50%;
     height: 1em;
     border-radius: 0.2em;
+    appearance: none;
     -webkit-appearance: none;
     background-color: var(--col-whr);
     margin: 0.7em 0;
@@ -249,12 +250,14 @@ button:active {
 
   input[type="range"]::-webkit-slider-runnable-track {
     height: 1em;
+    appearance: none;
     -webkit-appearance: none;
     color: var(--col-rd);
   }
 
   input[type="range"]::-webkit-slider-thumb {
     width: 1em;
+    appearance: none;
     -webkit-appearance: none;
     height: 1em;
     background: #0c0c0c;
